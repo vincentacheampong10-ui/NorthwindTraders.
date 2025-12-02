@@ -70,6 +70,7 @@ public class App {
             }
         }
 
+
                 query = """
                         SELECT CustomerID, address, city, phone
                         FROM customers
