@@ -67,13 +67,53 @@ public class App {
                     System.out.println("Stock: " + unitsInStock);
                     System.out.println("---------------------------");
                 }
-
-                results.close();
-                statement.close();
-                connection.close();
             }
         }
-    }
-}
+
+                query = """
+                        SELECT CustomerID, address, city, phone
+                        FROM customers
+                        WHERE CustomerID like ? or city like ?;
+                        """;
+
+                try (Connection connection = DriverManager.getConnection(url, username, password);
+                     PreparedStatement statement = connection.prepareStatement(query)) {
+
+                    System.out.print("What is the CustomerID:");
+                    String CustomerID = scanner.nextLine();
+                    scanner.nextLine();
+                    System.out.print("What is the city:");
+                    String city = scanner.nextLine();
+
+                    //String productName = "%TOFU%";
+                    // int supplierID = 2;
+
+                    statement.setString(1, "%" + CustomerID + "%");
+                    statement.setString(2,"%" + city + "%");
+
+                    try (ResultSet results = statement.executeQuery()) {
+
+                        while (results.next()) {
+                            CustomerID = results.getString("CustomerID");  ///   String title = results.getString("title"); and String description = results.getString(2); are the same
+                            int address = results.getInt(2);
+                            city = results.getString(3);
+                            int phone = results.getInt(4);
+
+                            System.out.println("---------------------------");
+                            System.out.println("ID: " + CustomerID);
+                            System.out.println("address " + address);
+                            System.out.println("city: " + city);
+                            System.out.println("phone: " + phone);
+                            System.out.println("---------------------------");
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+
 
 

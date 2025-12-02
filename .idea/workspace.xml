@@ -168,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764701782662</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="try block added">
+      <option name="closed" value="true" />
+      <created>1764706822098</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1764706822099</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -179,6 +187,7 @@
     <MESSAGE value="taking input for PreparedStatement for northwind exercise" />
     <MESSAGE value="taking input for password and login PreparedStatement for northwind exercise" />
     <MESSAGE value="changed println to print line 14,17" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed println to print line 14,17" />
+    <MESSAGE value="try block added" />
+    <option name="LAST_COMMIT_MESSAGE" value="try block added" />
   </component>
 </project>
