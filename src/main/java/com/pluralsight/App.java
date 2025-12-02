@@ -11,6 +11,23 @@ public class App {
         String username = args[0];
         String password = args[1];
 
+        System.out.println("What is the username:");
+         String userInput = scanner.nextLine();
+
+        System.out.println("What is the password:");
+        String userPassword = scanner.nextLine();
+
+        if (userInput.equalsIgnoreCase(username) && userPassword.equalsIgnoreCase(password)) {
+            System.out.println("Login in successfully");
+        } else {
+            System.out.println("Login failed");
+            return;
+        }
+
+        preparedStatement(url, username, password, scanner);
+    }
+
+    private static void preparedStatement(String url, String username, String password, Scanner scanner) throws SQLException {
         Connection connection = DriverManager.getConnection(url, username, password);
 
         String query = """
@@ -28,9 +45,8 @@ public class App {
         String productName = scanner.nextLine();
 
 
-
         //String productName = "%TOFU%";
-       // int supplierID = 2;
+        // int supplierID = 2;
 
         statement.setString(1, "%"+productName+"%");
         statement.setInt(2, supplierID);
