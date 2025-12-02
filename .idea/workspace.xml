@@ -103,22 +103,20 @@
       <option name="project" value="LOCAL" />
       <updated>1764686451041</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="change to film, add columns">
+      <option name="closed" value="true" />
+      <created>1764687532355</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1764687532355</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="SELECT productName FROM products" />
-    <option name="LAST_COMMIT_MESSAGE" value="SELECT productName FROM products" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../NorthwindTraders/src/main/java/com/pluralsight/App.java</url>
-          <line>6</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="change to film, add columns" />
+    <option name="LAST_COMMIT_MESSAGE" value="change to film, add columns" />
   </component>
 </project>

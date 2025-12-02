@@ -10,26 +10,29 @@ public class App {
 
         Connection connection = DriverManager.getConnection(url, username, password);
 
-        Statement statement = connection.createStatement();
         String query = """
                 SELECT title, description, release_year, length
                 FROM film;
                 """;
 
+        PreparedStatement statement = connection.prepareStatement(query);
 
-        ResultSet results = statement.executeQuery(query);
+        ResultSet results = statement.executeQuery();
 
         while (results.next()) {
             String title = results.getString("title");  ///   String title = results.getString("title"); and String description = results.getString(2); are the same
             String description = results.getString(2);
              int releaseYear = results.getInt(3);
              int length = results.getInt(4);
+
              System.out.println(title);
             System.out.println(description);
             System.out.println(releaseYear);
             System.out.println(length);
         }
 
+        results.close();
+        statement.close();
         connection.close();
     }
 }
