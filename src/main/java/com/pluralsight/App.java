@@ -1,9 +1,12 @@
 package com.pluralsight;
 
 import java.sql.*;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws SQLException {
+        Scanner scanner =  new Scanner(System.in);
+
         String url = "jdbc:mysql://localhost:3306/Northwind";
         String username = args[0];
         String password = args[1];
@@ -11,17 +14,25 @@ public class App {
         Connection connection = DriverManager.getConnection(url, username, password);
 
         String query = """
-                SELECT productID, productName, unitPrice, UnitsInStock
+                SELECT productID, productName, unitPrice, unitsInStock
                 FROM Products
-                WHERE productName like ? or supplierID like ?;
+                WHERE productName like ? or supplierID = ?;
                 """;
 
         PreparedStatement statement = connection.prepareStatement(query);
 
-        String productName = "%TOFU%";
-        int supplierID = 2;
+        System.out.print("What is the supplierID:");
+        int supplierID = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("What is the productName:");
+        String productName = scanner.nextLine();
 
-        statement.setString(1, productName);
+
+
+        //String productName = "%TOFU%";
+       // int supplierID = 2;
+
+        statement.setString(1, "%"+productName+"%");
         statement.setInt(2, supplierID);
 
 
@@ -30,13 +41,16 @@ public class App {
         while (results.next()) {
             int productID = results.getInt("productID");  ///   String title = results.getString("title"); and String description = results.getString(2); are the same
             productName = results.getString(2);
-             int unitPrice = results.getInt(3);
-             int UnitsInStock = results.getInt(4);
+            int unitPrice = results.getInt(3);
+            int unitsInStock = results.getInt(4);
 
-             System.out.println(productID);
-            System.out.println(productName);
-            System.out.println(unitPrice);
-            System.out.println(UnitsInStock);
+            System.out.println("---------------------------");
+            System.out.println("ID: " + productID);
+            System.out.println("supplierID " + supplierID);
+            System.out.println("Name: " + productName);
+            System.out.println("Price: $" + unitPrice);
+            System.out.println("Stock: " + unitsInStock);
+            System.out.println("---------------------------");
         }
 
         results.close();

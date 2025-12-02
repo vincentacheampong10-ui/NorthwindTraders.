@@ -136,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764693893605</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="PreparedStatement for northwind exercise">
+      <option name="closed" value="true" />
+      <created>1764694527462</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764694527462</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
