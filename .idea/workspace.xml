@@ -111,12 +111,21 @@
       <option name="project" value="LOCAL" />
       <updated>1764687532355</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="PreparedStatement">
+      <option name="closed" value="true" />
+      <created>1764691171509</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1764691171509</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="SELECT productName FROM products" />
     <MESSAGE value="change to film, add columns" />
-    <option name="LAST_COMMIT_MESSAGE" value="change to film, add columns" />
+    <MESSAGE value="PreparedStatement" />
+    <option name="LAST_COMMIT_MESSAGE" value="PreparedStatement" />
   </component>
 </project>
