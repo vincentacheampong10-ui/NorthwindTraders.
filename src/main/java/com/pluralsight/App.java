@@ -5,14 +5,14 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws SQLException {
-        Scanner scanner =  new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         String url = "jdbc:mysql://localhost:3306/Northwind";
         String username = args[0];
         String password = args[1];
 
         System.out.print("What is the username:");
-         String userInput = scanner.nextLine();
+        String userInput = scanner.nextLine();
 
         System.out.print("What is the password:");
         String userPassword = scanner.nextLine();
@@ -24,11 +24,11 @@ public class App {
             return;
         }
 
-        preparedStatement(url, username, password, scanner);
+        displayProduct(url, username, password, scanner);
     }
 
-    private static void preparedStatement(String url, String username, String password, Scanner scanner) throws SQLException {
-        Connection connection = DriverManager.getConnection(url, username, password);
+    private static void displayProduct(String url, String username, String password, Scanner scanner) throws SQLException {
+        // Connection connection = DriverManager.getConnection(url, username, password);
 
         String query = """
                 SELECT productID, productName, unitPrice, unitsInStock
@@ -36,44 +36,44 @@ public class App {
                 WHERE productName like ? or supplierID = ?;
                 """;
 
-        PreparedStatement statement = connection.prepareStatement(query);
+        try (Connection connection = DriverManager.getConnection(url, username, password);
+             PreparedStatement statement = connection.prepareStatement(query)) {
 
-        System.out.print("What is the supplierID:");
-        int supplierID = scanner.nextInt();
-        scanner.nextLine();
-        System.out.print("What is the productName:");
-        String productName = scanner.nextLine();
+            System.out.print("What is the supplierID:");
+            int supplierID = scanner.nextInt();
+            scanner.nextLine();
+            System.out.print("What is the productName:");
+            String productName = scanner.nextLine();
 
+            //String productName = "%TOFU%";
+            // int supplierID = 2;
 
-        //String productName = "%TOFU%";
-        // int supplierID = 2;
+            statement.setString(1, "%" + productName + "%");
+            statement.setInt(2, supplierID);
 
-        statement.setString(1, "%"+productName+"%");
-        statement.setInt(2, supplierID);
+            try (ResultSet results = statement.executeQuery()) {
 
+                while (results.next()) {
+                    int productID = results.getInt("productID");  ///   String title = results.getString("title"); and String description = results.getString(2); are the same
+                    productName = results.getString(2);
+                    int unitPrice = results.getInt(3);
+                    int unitsInStock = results.getInt(4);
 
-        ResultSet results = statement.executeQuery();
+                    System.out.println("---------------------------");
+                    System.out.println("ID: " + productID);
+                    System.out.println("supplierID " + supplierID);
+                    System.out.println("Name: " + productName);
+                    System.out.println("Price: $" + unitPrice);
+                    System.out.println("Stock: " + unitsInStock);
+                    System.out.println("---------------------------");
+                }
 
-        while (results.next()) {
-            int productID = results.getInt("productID");  ///   String title = results.getString("title"); and String description = results.getString(2); are the same
-            productName = results.getString(2);
-            int unitPrice = results.getInt(3);
-            int unitsInStock = results.getInt(4);
-
-            System.out.println("---------------------------");
-            System.out.println("ID: " + productID);
-            System.out.println("supplierID " + supplierID);
-            System.out.println("Name: " + productName);
-            System.out.println("Price: $" + unitPrice);
-            System.out.println("Stock: " + unitsInStock);
-            System.out.println("---------------------------");
+                results.close();
+                statement.close();
+                connection.close();
+            }
         }
-
-        results.close();
-        statement.close();
-        connection.close();
     }
 }
-
 
 

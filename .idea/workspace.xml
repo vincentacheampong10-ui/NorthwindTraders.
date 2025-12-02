@@ -152,7 +152,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764700315576</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="taking input for password and login PreparedStatement for northwind exercise">
+      <option name="closed" value="true" />
+      <created>1764701659080</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1764701659080</updated>
+    </task>
+    <task id="LOCAL-00010" summary="changed println to print line 14,17">
+      <option name="closed" value="true" />
+      <created>1764701782662</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1764701782662</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -161,6 +177,8 @@
     <MESSAGE value="PreparedStatement" />
     <MESSAGE value="PreparedStatement for northwind exercise" />
     <MESSAGE value="taking input for PreparedStatement for northwind exercise" />
-    <option name="LAST_COMMIT_MESSAGE" value="taking input for PreparedStatement for northwind exercise" />
+    <MESSAGE value="taking input for password and login PreparedStatement for northwind exercise" />
+    <MESSAGE value="changed println to print line 14,17" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed println to print line 14,17" />
   </component>
 </project>
