@@ -45,6 +45,7 @@
     "Application.App.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -127,13 +128,22 @@
       <option name="project" value="LOCAL" />
       <updated>1764692180220</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="PreparedStatement for northwind exercise">
+      <option name="closed" value="true" />
+      <created>1764693893605</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1764693893605</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="SELECT productName FROM products" />
     <MESSAGE value="change to film, add columns" />
     <MESSAGE value="PreparedStatement" />
-    <option name="LAST_COMMIT_MESSAGE" value="PreparedStatement" />
+    <MESSAGE value="PreparedStatement for northwind exercise" />
+    <option name="LAST_COMMIT_MESSAGE" value="PreparedStatement for northwind exercise" />
   </component>
 </project>
