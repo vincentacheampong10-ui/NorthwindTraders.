@@ -11,10 +11,10 @@ public class App {
         String username = args[0];
         String password = args[1];
 
-        System.out.println("What is the username:");
+        System.out.print("What is the username:");
          String userInput = scanner.nextLine();
 
-        System.out.println("What is the password:");
+        System.out.print("What is the password:");
         String userPassword = scanner.nextLine();
 
         if (userInput.equalsIgnoreCase(username) && userPassword.equalsIgnoreCase(password)) {
